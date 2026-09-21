@@ -1,0 +1,122 @@
+/* ================= GENERAL ================= */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px; /* Offset for sticky navbar */
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif; /* Modernized font stack */
+}
+
+/* ================= HEADER ================= */
+.navbar-brand {
+    letter-spacing: 1px;
+}
+
+/* ================= HERO SECTION ================= */
+.hero-slide {
+    height: 70vh; /* Responsive height */
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Dark overlay on hero images */
+.hero-slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8)); /* Smoother gradient overlay */
+}
+
+/* Text appears above overlay */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* ================= NEW HERO IMAGES ================= */
+.slide-one {
+    background-image: url("images/inception-hero.jpg");
+}
+.slide-two {
+    background-image: url("images/interstellar-hero1.jpg");
+}
+.slide-three {
+    background-image: url("images/dark-hero.jpg");
+}
+
+/* ================= MOVIE CARDS ================= */
+.movie-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Movie poster size */
+.movie-card img {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ================= GENRES ================= */
+.genres-section {
+    background-color: #1a1d20; /* Slightly darker than default bootstrap dark */
+}
+
+.genre-btn {
+    border-radius: 30px;
+    padding: 8px 24px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.genre-btn:hover {
+    transform: scale(1.05);
+}
+
+/* ================= UPCOMING ================= */
+#upcoming .card {
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+}
+
+#upcoming .card:hover {
+    transform: translateY(-5px);
+}
+
+/* ================= ABOUT ================= */
+.about-text {
+    max-width: 700px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 767px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .movie-card img {
+        height: 400px;
+    }
+}

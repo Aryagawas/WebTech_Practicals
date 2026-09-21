@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Food Order System</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🍔 Food Order System</h1>
+
+
+    <div class="card">
+
+        <h2>Customer Details</h2>
+
+        <label>Customer Name</label>
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Enter your name"
+        >
+
+        <p id="nameError" class="error"></p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Select Food</h2>
+
+        <label>Food Item</label>
+
+        <select id="foodItem">
+
+            <option value="">Select Food</option>
+
+            <option value="Burger" data-price="120">
+                Burger - ₹120
+            </option>
+
+            <option value="Pizza" data-price="250">
+                Pizza - ₹250
+            </option>
+
+            <option value="French Fries" data-price="100">
+                French Fries - ₹100
+            </option>
+
+            <option value="Sandwich" data-price="150">
+                Sandwich - ₹150
+            </option>
+
+            <option value="Pasta" data-price="180">
+                Pasta - ₹180
+            </option>
+
+        </select>
+
+        <p id="foodError" class="error"></p>
+
+
+        <label>Quantity</label>
+
+        <input
+            type="number"
+            id="quantity"
+            min="1"
+            placeholder="Enter quantity"
+        >
+
+        <p id="quantityError" class="error"></p>
+
+
+        <button id="addButton">
+            Add to Order
+        </button>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Your Order</h2>
+
+        <div id="orderList">
+            No items added yet.
+        </div>
+
+
+        <h3>
+            Total: ₹<span id="total">0</span>
+        </h3>
+
+
+        <button id="placeOrderButton">
+            Place Order
+        </button>
+
+        <button id="clearButton">
+            Clear Order
+        </button>
+
+
+        <p id="orderMessage"></p>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
