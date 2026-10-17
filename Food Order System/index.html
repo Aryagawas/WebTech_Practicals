@@ -1,18 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>Food Order System</title>
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>Food Order System</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -22,6 +17,7 @@
     <h1>🍔 Food Order System</h1>
 
 
+    <!-- Customer Details -->
     <div class="card">
 
         <h2>Customer Details</h2>
@@ -36,9 +32,40 @@
 
         <p id="nameError" class="error"></p>
 
+
+        <label>Phone Number</label>
+
+        <input
+            type="tel"
+            id="phone"
+            placeholder="Enter 10-digit phone number"
+            maxlength="10"
+        >
+
+        <p id="phoneError" class="error"></p>
+
+
+        <label>Delivery Address</label>
+
+        <textarea
+            id="address"
+            placeholder="Enter delivery address"
+        ></textarea>
+
+        <p id="addressError" class="error"></p>
+
+
+        <label>Special Instructions</label>
+
+        <textarea
+            id="instructions"
+            placeholder="Example: Less spicy, no onions (optional)"
+        ></textarea>
+
     </div>
 
 
+    <!-- Food Selection -->
     <div class="card">
 
         <h2>Select Food</h2>
@@ -80,6 +107,7 @@
             type="number"
             id="quantity"
             min="1"
+            max="20"
             placeholder="Enter quantity"
         >
 
@@ -87,12 +115,13 @@
 
 
         <button id="addButton">
-            Add to Order
+            Add / Update Item
         </button>
 
     </div>
 
 
+    <!-- Order -->
     <div class="card">
 
         <h2>Your Order</h2>
@@ -102,12 +131,28 @@
         </div>
 
 
-        <h3>
-            Total: ₹<span id="total">0</span>
-        </h3>
+        <!-- Bill -->
+        <div class="bill">
+
+            <p>
+                Subtotal:
+                ₹<span id="subtotal">0</span>
+            </p>
+
+            <p>
+                Delivery Charge:
+                ₹<span id="deliveryCharge">0</span>
+            </p>
+
+            <h3>
+                Final Bill:
+                ₹<span id="total">0</span>
+            </h3>
+
+        </div>
 
 
-        <button id="placeOrderButton">
+        <button id="placeOrderButton" disabled>
             Place Order
         </button>
 

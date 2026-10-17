@@ -1,90 +1,386 @@
+:root {
+    --bg: #fff8f0;
+    --card-bg: #ffffff;
+
+    --text: #2d1b14;
+    --muted: #6b5147;
+
+    --primary: #e85d04;
+    --primary-dark: #c94d00;
+
+    --secondary: #2f7d32;
+    --secondary-dark: #256428;
+
+    --danger: #d62828;
+    --danger-dark: #b71c1c;
+
+    --border: #e4cfc0;
+
+    --cream: #fff1df;
+    --light-orange: #fff7ed;
+
+    --shadow: 0 4px 14px rgba(92, 48, 24, 0.10);
+    --shadow-hover: 0 8px 22px rgba(92, 48, 24, 0.15);
+
+    --radius: 10px;
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
 * {
-  box-sizing: border-box;
-  }
+    box-sizing: border-box;
+}
 
 body {
-font-family: Arial, sans-serif;
-background-color: #f2f2f2;
-margin: 0;
-padding: 30px;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 32px 16px;
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
 }
 
 .container {
-width: 600px;
-max-width: 100%;
-margin: auto;
+    max-width: 640px;
+    margin: 0 auto;
 }
+
+
+/* =========================
+   HEADINGS
+========================= */
 
 h1 {
-text-align: center;
-margin-bottom: 30px;
-}
-
-.card {
-background-color: white;
-padding: 25px;
-margin-bottom: 20px;
-border-radius: 10px;
-box-shadow: 0 2px 8px gray;
+    text-align: center;
+    color: #9f2d00;
+    margin-bottom: 28px;
+    letter-spacing: 0.5px;
 }
 
 h2 {
-margin-top: 0;
-}
-
-label {
-display: block;
-margin-top: 15px;
-margin-bottom: 5px;
-font-weight: bold;
-}
-
-input,
-select {
-width: 100%;
-padding: 10px;
-font-size: 16px;
-border: 1px solid #aaa;
-border-radius: 5px;
-}
-
-button {
-padding: 10px 18px;
-margin-top: 20px;
-border: none;
-border-radius: 5px;
-background-color: #ff6600;
-color: white;
-cursor: pointer;
-font-size: 15px;
-}
-
-button:hover {
-background-color: #cc5200;
-}
-
-.error {
-color: red;
-font-size: 14px;
-}
-
-.order {
-background-color: #f5f5f5;
-padding: 12px;
-margin-top: 10px;
-border-radius: 5px;
-}
-
-.delete {
-background-color: red;
-margin-top: 5px;
-}
-
-#orderMessage {
-font-weight: bold;
-margin-top: 15px;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.15rem;
+    color: #3b2118;
+    border-bottom: 2px solid #ead8ca;
+    padding-bottom: 10px;
 }
 
 h3 {
-margin-top: 20px;
+    margin-bottom: 16px;
+    color: #b83b00;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+
+    transition: box-shadow 0.2s ease,
+                transform 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================
+   LABELS
+========================= */
+
+label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #54382d;
+    margin-bottom: 6px;
+    margin-top: 14px;
+}
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 11px 13px;
+
+    border: 1px solid #d8bca9;
+    border-radius: 8px;
+
+    background: #fffdfb;
+    color: var(--text);
+
+    outline: none;
+    font-size: 0.95rem;
+
+    transition: border-color 0.15s ease,
+                box-shadow 0.15s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #a89083;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(232, 93, 4, 0.15);
+}
+
+
+/* =========================
+   TEXTAREA
+========================= */
+
+textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.error {
+    color: var(--danger);
+    font-size: 0.82rem;
+    margin: 6px 0 0;
+    min-height: 1em;
+    font-weight: 500;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+
+    padding: 11px 18px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    margin-top: 16px;
+    margin-right: 10px;
+
+    transition:
+        background-color 0.15s ease,
+        transform 0.05s ease,
+        box-shadow 0.15s ease;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   ADD ITEM
+========================= */
+
+#addButton {
+    background: var(--primary);
+    color: #ffffff;
+
+    width: 100%;
+    margin-right: 0;
+}
+
+#addButton:hover {
+    background: var(--primary-dark);
+
+    box-shadow:
+        0 3px 8px rgba(232, 93, 4, 0.25);
+}
+
+
+/* =========================
+   PLACE ORDER
+========================= */
+
+#placeOrderButton {
+    background: var(--secondary);
+    color: #ffffff;
+}
+
+#placeOrderButton:hover {
+    background: var(--secondary-dark);
+
+    box-shadow:
+        0 3px 8px rgba(47, 125, 50, 0.25);
+}
+
+
+/* Disabled Place Order */
+
+#placeOrderButton:disabled {
+    background: #c9bdb5;
+    color: #ffffff;
+    cursor: not-allowed;
+    opacity: 0.8;
+    box-shadow: none;
+}
+
+
+/* =========================
+   CLEAR BUTTON
+========================= */
+
+#clearButton {
+    background: #fffaf5;
+    color: #54382d;
+
+    border: 1px solid #d8bca9;
+}
+
+#clearButton:hover {
+    background: #f7eadf;
+    border-color: #c5a28c;
+}
+
+
+/* =========================
+   ORDER LIST
+========================= */
+
+#orderList {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+
+/* =========================
+   ORDER ITEM
+========================= */
+
+.order {
+    background: var(--light-orange);
+
+    border: 1px solid #ead5c5;
+    border-left: 4px solid var(--primary);
+
+    border-radius: 8px;
+
+    padding: 14px 16px;
+    margin-bottom: 12px;
+
+    color: var(--text);
+    font-size: 0.92rem;
+}
+
+.order strong {
+    font-size: 1rem;
+    color: #9f2d00;
+}
+
+
+/* =========================
+   QUANTITY BUTTONS
+========================= */
+
+.quantityButton {
+    background: var(--primary);
+    color: #ffffff;
+
+    padding: 4px 10px;
+    margin: 4px;
+
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.quantityButton:hover {
+    background: var(--primary-dark);
+}
+
+.quantity {
+    font-weight: bold;
+    color: #3b2118;
+    margin: 0 5px;
+}
+
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.order button.delete {
+    background: var(--danger);
+    color: #ffffff;
+
+    padding: 6px 12px;
+
+    font-size: 0.82rem;
+
+    margin-top: 10px;
+    margin-right: 0;
+}
+
+.order button.delete:hover {
+    background: var(--danger-dark);
+}
+
+
+/* =========================
+   BILL
+========================= */
+
+.bill {
+    margin-top: 20px;
+    padding-top: 15px;
+
+    border-top: 2px solid #ead8ca;
+}
+
+.bill p {
+    margin: 8px 0;
+    color: #5c463b;
+}
+
+.bill h3 {
+    font-size: 1.2rem;
+    color: #9f2d00;
+}
+
+
+/* =========================
+   ORDER MESSAGE
+========================= */
+
+#orderMessage {
+    font-weight: 600;
+    margin-top: 10px;
 }
